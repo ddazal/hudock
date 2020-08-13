@@ -11,16 +11,18 @@ RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hug
   && rm hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz \
   && apk add --no-cache libstdc++ libc6-compat
 
-WORKDIR /usr/src/site
+WORKDIR /usr/src
 
 EXPOSE 1313
 
-COPY ./src/package*.json ./
+COPY ./src/package*.json ./site/
 
 RUN npm install
 
-COPY ./src .
+COPY start.sh .
 
 RUN chmod +x start.sh
+
+COPY ./src ./site
 
 ENTRYPOINT [ "./start.sh" ]
