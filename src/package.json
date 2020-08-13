@@ -1,0 +1,18 @@
+{
+  "name": "hudock",
+  "version": "1.0.0",
+  "description": "Docker image for Hugo static site generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Daza <03dazal@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^1.6.2"
+  },
+  "devDependencies": {
+    "postcss": "^7.0.27",
+    "postcss-cli": "^7.1.0"
+  }
+}

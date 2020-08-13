@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{ $styles := resources.Get "styles/tailwind.pcss" | toCSS | postCSS | minify }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}">
+  {{ if .Title }}
+    <title>{{ .Title }}</title>
+  {{ else }}
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+  {{ end }}
+</head>
+<body class="antialiased min-h-screen flex flex-col max-w-4xl px-4 mx-auto">
+  {{ partial "navbar.html" . }}
+  <main class="flex-grow">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+</body>
+</html>
