@@ -23,4 +23,4 @@ COPY ./src .
 
 RUN chmod +x start.sh
 
-CMD [ "./start.sh" ]
+ENTRYPOINT [ "./start.sh" ]
