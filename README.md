@@ -16,25 +16,27 @@ To build the site change the value of the `HUGO_ENV` variable to `production`
 
 ## Usage
 
-Dev:
+1. Clone this repository
+2. Select a mode:
+    * Dev:
 
-```sh
-docker container run \
-  -v $(pwd)/src:/usr/src/site \
-  -p 1313:1313 \
-  --rm \
-  ddazal/hudock
-```
+      ```sh
+      docker container run \
+        -v $(pwd)/src:/usr/src/site \
+        -p 1313:1313 \
+        --rm \
+        ddazal/hudock
+      ```
 
-Build:
+    * Build:
 
-```sh
-docker container run \
-  -v $(pwd)/src:/usr/src/site \
-  -e HUGO_ENV=production \
-  --rm \
-  ddazal/hudock
-```
+      ```sh
+      docker container run \
+        -v $(pwd)/src:/usr/src/site \
+        -e HUGO_ENV=production \
+        --rm \
+        ddazal/hudock
+      ```
 
 Also, you can pass `hugo` flags as commands to the container:
 
